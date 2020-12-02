@@ -6,10 +6,17 @@ const connect = function() {
     host: 'localhost',
     port: 50541
   });
-  // interpret incoming data as text
-  conn.setEncoding('utf8');
-  // Add event handler to appropriate loc....
 
+  // Notify user connection is established & set a player name
+  conn.on('connect', () => {
+    console.log('Connected to game server.');
+    conn.write('Name: RJM');
+  });
+  
+  // Interpret incoming data as text
+  conn.setEncoding('utf8');
+ 
+  // Print messages from server to the console:
   conn.on('data', (data) => {
     console.log('Server says: ', data);
   });
