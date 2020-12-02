@@ -1,3 +1,4 @@
+const { moveUpKey, moveDnKey, moveLeftKey, moveRightKey, messageKey1, messageKey2 } = require('./constants');
 let connection;
 
 // Configure user input via stdin
@@ -13,26 +14,23 @@ const setupInput = function(conn) {
 
 // Control handler
 const handleUserInput = function(key) {
-  if (key === "\u0077") {                    // Key 'w'
+  if (key === moveUpKey) {
     connection.write('Move: up');
   }
-  if (key === "\u0073") {                    // Key 's'
+  if (key === moveDnKey) {
     connection.write('Move: down');
   }
-  if (key === "\u0061") {                    // Key 'a'
+  if (key === moveLeftKey) {
     connection.write('Move: left');
   }
-  if (key === "\u0064") {                    // Key 'd'
+  if (key === moveRightKey) {
     connection.write('Move: right');
   }
-  if (key === "\u006D") {                    // Key 'm'
+  if (key === messageKey1) {
     connection.write('Say: Out of my way!');
   }
-  if (key === "\u0079") {                    // Key 'y'
+  if (key === messageKey2) {
     connection.write('Say: Yummy!');
-  }
-  if (key === "\u0067") {                    // Key 'g'
-    connection.write('Say: My pellet!');
   }
   if (key === "\u0003") {
     process.exit();
