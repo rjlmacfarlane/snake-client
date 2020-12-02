@@ -13,17 +13,26 @@ const setupInput = function(conn) {
 
 // Control handler
 const handleUserInput = function(key) {
-  if (key === "\u0077") {
-    connection.write('Move: up');    // Key 'w'
+  if (key === "\u0077") {                    // Key 'w'
+    connection.write('Move: up');
   }
-  if (key === "\u0073") {
-    connection.write('Move: down');  // Key 's'
+  if (key === "\u0073") {                    // Key 's'
+    connection.write('Move: down');
   }
-  if (key === "\u0061") {
-    connection.write('Move: left');  // Key 'a'
+  if (key === "\u0061") {                    // Key 'a'
+    connection.write('Move: left');
   }
-  if (key === "\u0064") {
-    connection.write('Move: right'); // Key 'd'
+  if (key === "\u0064") {                    // Key 'd'
+    connection.write('Move: right');
+  }
+  if (key === "\u006D") {                    // Key 'm'
+    connection.write('Say: Out of my way!');
+  }
+  if (key === "\u0079") {                    // Key 'y'
+    connection.write('Say: Yummy!');
+  }
+  if (key === "\u0067") {                    // Key 'g'
+    connection.write('Say: My pellet!');
   }
   if (key === "\u0003") {
     process.exit();
